@@ -21,8 +21,8 @@ let stopSlider = () => {
   clearInterval(intervalId)
 }
 
-sliderEl.addEventListener('mouseenter', stopSlider)
-sliderEl.addEventListener('mouseleave', startSlider)
+sliderEl.addEventListener("mouseenter", stopSlider)
+sliderEl.addEventListener("mouseleave", startSlider)
 
 startSlider()
 
@@ -34,6 +34,8 @@ let tabContents = document.querySelectorAll("#tabContainer > div")
 let hideTabContent = () => {
   tabContents.forEach((country) => {
     country.classList.add("hidden")
+    country.classList.add("opacity-0")
+    country.classList.add("translate-y-4")
   })
 
   tabButtons.forEach((btn) => {
@@ -46,6 +48,10 @@ hideTabContent()
 // Show tab content
 let showTabContent = (index) => {
   tabContents[index].classList.remove("hidden")
+  setTimeout(() => {
+    tabContents[index].classList.remove("opacity-0")
+    tabContents[index].classList.remove("translate-y-4")
+  }, 100)
   tabButtons[index].classList.remove("text-lime-500")
   tabButtons[index].classList.add("bg-lime-500", "text-white")
 }
