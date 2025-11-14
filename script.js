@@ -14,7 +14,7 @@ let moveSlider = () => {
 }
 
 let startSlider = () => {
-  intervalId = setInterval(moveSlider, 1500)
+  intervalId = setInterval(moveSlider, 2000)
 }
 
 let stopSlider = () => {
